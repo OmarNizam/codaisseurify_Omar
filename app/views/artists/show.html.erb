@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,37 +8,45 @@
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 
     <title>Codaisseurify</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
     <header>
-      <h1 class="artists"><%= @artist.name %></h1>
+      <h1 class = "artists"><%= @artist.name %></h1>
       <%= image_tag @artist.image_url, size: "300x300" %>
-      <%= link_to "Back to Artists", root_path %>
+      <%= link_to "[Back to Artists]", root_path%>
     </header>
-    <main>
-      <div class= "links">
-        <%= link_to "Delete Artist", artist_path(@artist), method: :delete, data: { confirm: "Are you sure ?" } %>
-      </div>
 
+    <main>
+
+      <div class= "links">
+        <%= link_to "[Delete Artist]", artist_path(@artist), method: :delete, data: { confirm: "Are you sure?" } %>
+
+      </div>
       <div>
         <h2>Songs by <%= @artist.name %>:</h2>
         <ul>
-          <% @artist.song.each do |song| %>
-          <li class="links"><%= song.title %></li>
+          <% @artist.songs.each do |song| %>
+          <li class = "links"><%= song.title %></li>
           <%= link_to "Delete", artist_song_path(@artist, song), method: :delete, data: { confirm: "Are you sure?" } %>
-          <% end %>
+          <%end %>
         </ul>
       </div>
 
       <div>
         <h2>Add a New Song</h2>
-        <%= render "songs/new" %>
+        <%= render 'songs/new' %>
       </div>
+
     </main>
     <footer>
-      <p>
-        &copy; July 2017 Made with &#10084; by Omar
-      </p>
+      <p>&copy; July 2017 Made with &#10084; by Omar</p>
     </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

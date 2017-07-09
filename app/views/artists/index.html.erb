@@ -1,0 +1,20 @@
+<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+<h1>List of Artists</h1>
+
+<%= link_to "Artist By Alphabetical Order", artists_path(order: :name) %>
+<%= link_to "Artist By Creation Date", artists_path(order: :created_at) %>
+
+<section class="artist">
+  <% @artists.each do |artist| %>
+  <h2><%= link_to artist.name, artist_path(artist.id) %></h2>
+  <%= image_tag artist.image_url, size: "300x300" %>
+  <% end %>
+</section>
+
+<footer>
+  <p>
+    &copy; July 2017 Made with &#10084; by Omar
+  </p>
+</footer>

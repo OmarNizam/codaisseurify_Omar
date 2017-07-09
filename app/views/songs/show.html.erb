@@ -1,0 +1,13 @@
+<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+<h1>List of Songs</h1>
+<% @song.each do |song| %>
+  <p><%= link_to song.title, root_path %></p>
+<% end %>
+
+<footer>
+  <p>
+    &copy; July 2017 Made with &#10084; by Omar
+  </p>
+</footer>

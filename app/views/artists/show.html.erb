@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+    <title>Codaisseurify</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="artists"><%= @artist.name %></h1>
+      <%= image_tag @artist.image_url, size: "300x300" %>
+      <%= link_to "Back to Artists", root_path %>
+    </header>
+    <main>
+      <div class= "links">
+        <%= link_to "Delete Artist", artist_path(@artist), method: :delete, data: { confirm: "Are you sure ?" } %>
+      </div>
+
+      <div>
+        <h2>Songs by <%= @artist.name %>:</h2>
+        <ul>
+          <% @artist.song.each do |song| %>
+          <li class="links"><%= song.title %></li>
+          <%= link_to "Delete", artist_song_path(@artist, song), method: :delete, data: { confirm: "Are you sure?" } %>
+          <% end %>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Add a New Song</h2>
+        <%= render "songs/new" %>
+      </div>
+    </main>
+    <footer>
+      <p>
+        &copy; July 2017 Made with &#10084; by Omar
+      </p>
+    </footer>
+  </body>
+</html>

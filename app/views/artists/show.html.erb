@@ -9,8 +9,7 @@
 
     <title>Codaisseurify</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+
   </head>
   <body>
     <header>
@@ -27,9 +26,9 @@
       </div>
       <div>
         <h2>Songs by <%= @artist.name %>:</h2>
-        <ul>
+        <ul class="list-group">
           <% @artist.songs.each do |song| %>
-          <li class = "links"><%= song.title %></li>
+          <li class = "list-group-item"><%= song.title %></li>
           <%= link_to "Delete", artist_song_path(@artist, song), method: :delete, data: { confirm: "Are you sure?" } %>
           <%end %>
         </ul>
@@ -44,9 +43,5 @@
     <footer>
       <p>&copy; July 2017 Made with &#10084; by Omar</p>
     </footer>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

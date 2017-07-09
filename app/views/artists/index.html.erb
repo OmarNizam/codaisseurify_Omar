@@ -2,9 +2,12 @@
 <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 
 <h1>List of Artists</h1>
+<div  >
 
 <%= link_to "Artist By Alphabetical Order", artists_path(order: :name) %>
+<br>
 <%= link_to "Artist By Creation Date", artists_path(order: :created_at) %>
+</div>
 
 <section class="artist">
   <% @artists.each do |artist| %>

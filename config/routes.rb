@@ -1,6 +1,10 @@
 # config/routes.rb
 
 Rails.application.routes.draw do
-  root to: 'pages#home'
+  root  'artists#index'
+  root 'songs#index'
+
+  resources :artists, only: [:index, :show, :destroy]
+  resources :songs, only: [:create, :destroy]
 
 end

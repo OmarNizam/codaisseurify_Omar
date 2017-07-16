@@ -1,5 +1,5 @@
 class Song < ApplicationRecord
-  belongs_to :artist
+  belongs_to :artist, optional: true
 
   validates :title, presence: true, length: { maximum: 35 }
 

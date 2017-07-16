@@ -1,7 +1,9 @@
 class SongsController < ApplicationController
   before_action :set_artist
 
-
+def index
+  @songs = Sond.all
+end
 
   def show
     @song = Song.all

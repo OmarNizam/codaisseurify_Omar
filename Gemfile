@@ -69,3 +69,5 @@ gem 'jquery-rails', '~> 4.3.1'
 
 # Use Devise for authentication
 gem 'devise', '~> 4.2'
+
+gem 'active_model_serializers', '~> 0.10.0'

@@ -1,5 +1,8 @@
 // application.scss
+//= require_tree
+//= require_self
 
+@import "https://goo.gl/DcDN1G";
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "custom.scss";

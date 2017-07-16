@@ -2,6 +2,7 @@ class ArtistsController < ApplicationController
 
   def index
     @artists = Artist.order(params[:order])
+    @artist = Artist.new
   end
 
   def show

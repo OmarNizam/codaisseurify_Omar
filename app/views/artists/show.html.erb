@@ -29,8 +29,8 @@
         <h2>Songs by <%= @artist.name %>:</h2>
         <ul class="list-group">
           <% @artist.songs.each do |song| %>
-          <li class = "list-group-item"><%= song.title %></li>
-          <%= link_to "Delete", artist_song_path(@artist, song), method: :delete, data: { confirm: "Are you sure?" } %>
+          <li class = "list-group-item" ><%= song.title %> <a href class="delete" data-id="<%= song.id %>" name="deleteButton">Delete</a></li>
+
           <%end %>
         </ul>
       </div>

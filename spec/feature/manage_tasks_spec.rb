@@ -1,9 +1,5 @@
 require 'rails_helper'
 
-# feature 'Manage songs', js: true do
-#   scenario 'add a new song' do
-#     visit artists
-#
 
 
 feature 'Manage songs', js: true do
@@ -13,9 +9,14 @@ feature 'Manage songs', js: true do
 
   scenario 'delete a song' do
     visit artist_path(1)
-    
+    click_link('remove-1')
     sleep(10)
-
     expect(page).not_to have_content('song title')
+  end
+  scenario 'add a song' do
+    visit artist_path(1)
+    fill_in 'form_title', with: 'test song'
+    click_submit('Add')
+    expect(page).to have_content('test song')
   end
 end

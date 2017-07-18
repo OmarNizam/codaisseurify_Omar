@@ -29,7 +29,7 @@
         <h2>Songs by <%= @artist.name %>:</h2>
         <ul class="list-group">
           <% @artist.songs.each do |song| %>
-          <li class = "list-group-item" ><%= song.title %> <a href class="delete" data-id="<%= song.id %>" name="deleteButton">Delete</a></li>
+          <li class = "list-group-item" ><%= song.title %> <a href id="remove-<%= song.id %>" class="delete" data-id="<%= song.id %>" name="deleteButton">Delete</a></li>
 
           <%end %>
         </ul>
